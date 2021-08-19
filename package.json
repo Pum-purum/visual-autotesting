@@ -1,0 +1,10 @@
+{
+  "name": "visual-autotesting",
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "docker-compose run --rm codecept clean",
+    "desktop": "docker-compose run --rm codecept run --env desktop acceptance VisualRegressCest",
+    "tablet": "docker-compose run --rm codecept run --env tablet acceptance VisualRegressCest",
+    "mobile": "docker-compose run --rm codecept run --env mobile acceptance VisualRegressCest"
+  }
+}

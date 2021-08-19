@@ -1,0 +1,10 @@
+version: '3'
+services:
+  codecept:
+    build: .
+    depends_on:
+      - browser
+    volumes:
+      - .:/project
+  browser:
+    image: selenium/standalone-firefox

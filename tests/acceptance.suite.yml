@@ -1,0 +1,56 @@
+# Codeception Test Suite Configuration
+#
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
+
+actor: AcceptanceTester
+modules:
+  enabled:
+    - WebDriver
+    - \Helper\Acceptance
+    - Asserts
+    - VisualCeption
+  config:
+    \Helper\Acceptance:
+      stands:
+        'production': 'http://178.154.210.58'
+        'pre-production': 'https://preprod.mycoolproject.loc'
+        'test': 'https://qa.mycoolproject.loc'
+        'dev': 'https://dev.mycoolproject.loc'
+    WebDriver:
+      url: 'http://178.154.210.58'
+      browser: firefox
+      host: browser
+      restart: true
+      port: 4444
+      capabilities:
+        firefoxOptions:
+          args:
+            ['-headless']
+    VisualCeption:
+      maximumDeviation: 0.2                                 # deviation in percent
+      saveCurrentImageIfFailure: true                       # if true, VisualCeption saves the current
+      fullScreenShot: true                                  # fullpage screenshot
+      report: false
+env:
+  desktop:
+    modules:
+      config:
+        WebDriver: '1920x1080'
+  mobile:
+    modules:
+      config:
+        WebDriver:
+          window_size: '375x812'
+          capabilities:
+              mobileEmulation:
+                deviceName: 'iPhone XR'
+  tablet:
+    modules:
+      config:
+        WebDriver:
+          window_size: '768x1024'
+          capabilities:
+            mobileEmulation:
+              deviceName: 'iPad'

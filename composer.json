@@ -1,0 +1,15 @@
+{
+    "require-dev": {
+        "codeception/module-phpbrowser": "^1.0.1",
+        "codeception/module-asserts": "^1.3",
+        "codeception/module-webdriver": "^1.1.1"
+    },
+    "require": {
+        "codeception/codeception": "^4.1",
+        "php-webdriver/webdriver": "^1.8",
+        "codeception/module-webdriver": "^1.0.0",
+        "codeception/module-asserts": "^1.0.0",
+        "symfony/http-foundation": "v5.1.0",
+        "codeception/visualception": "*"
+    }
+}
