@@ -14,12 +14,12 @@ modules:
   config:
     \Helper\Acceptance:
       stands:
-        'production': 'http://178.154.210.58'
+        'production': 'http://178.154.213.206'
         'pre-production': 'https://preprod.mycoolproject.loc'
         'test': 'https://qa.mycoolproject.loc'
         'dev': 'https://dev.mycoolproject.loc'
     WebDriver:
-      url: 'http://178.154.210.58'
+      url: 'http://178.154.213.206'
       browser: firefox
       host: browser
       restart: true
